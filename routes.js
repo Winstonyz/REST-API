@@ -88,8 +88,7 @@ router.put('/courses/:id', authenticateUser, asyncHandler(async(req,res) => {
         course.estimatedTime = req.body.estimatedTime;
         course.materialsNeeded = req.body.materialsNeeded;
         course.title = req.body.title;
-
-        await save(course);
+        await course.save();
         res.status(204).end();
     } else {
         res.status(404).json({message: "Course Not Found"});

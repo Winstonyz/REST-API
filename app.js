@@ -15,6 +15,8 @@ app.use(morgan('dev'));
 
 //incorporate routes.js
 const routes = require("./routes")
+app.use(express.json());
+
 
 // setup a friendly greeting for the root route
 app.get('/', (req, res) => {
